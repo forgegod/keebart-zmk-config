@@ -83,11 +83,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &trans  &trans    &trans    &trans     &trans    &trans
-&trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans          &kp PG_UP                  &trans    &kp UP    &trans     &kp N0    &kp BSPC
-&trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK        &kp PG_DN                  &kp LEFT  &kp DOWN  &kp RIGHT  &kp HOME  &trans
-&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &studio_unlock  &trans     &trans  &trans  &kp DEL   &trans    &trans     &kp END   &trans
-                          &trans        &trans        &trans        &trans          &trans     &trans  &trans  &trans    &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans   &trans    &trans    &trans     &trans    &trans
+&trans      &trans        &kp PSCRN     &kp K_CMENU   &trans        &trans          &trans                   &trans    &kp UP    &trans     &kp N0    &kp BSPC
+&trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK        &trans                   &kp LEFT  &kp DOWN  &kp RIGHT  &kp HOME  &kp PG_UP
+&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &studio_unlock  &trans  &trans  &kp INS  &kp DEL   &trans    &trans     &kp END   &kp PAGE_DOWN
+                          &trans        &trans        &trans        &trans          &trans  &trans  &trans   &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
