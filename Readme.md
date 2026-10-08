@@ -17,6 +17,8 @@ Actions firmware builds.
 | --- | --- | --- | --- |
 | [Corne Choc Pro BT](https://keebart.com/products/corne-wireless) | 6-column | `corne_choc_pro_left`, `corne_choc_pro_right` | `Corne Choc BT` |
 | Corne Choc Pro BT 5-Col | 5-column | `corne_choc_pro_5col_left`, `corne_choc_pro_5col_right` | `Corne Choc BT` |
+| Corne Choc Pro BT DE | 6-column | `corne_choc_pro_de_left`, `corne_choc_pro_de_right` | `Corne Choc DE` |
+| Corne Choc Pro BT DE 5-Col | 5-column | `corne_choc_pro_de_5col_left`, `corne_choc_pro_de_5col_right` | `Corne DE 5col` |
 | [Piantor Pro BT](https://keebart.com/products/piantor-wireless) | 6-column | `piantor_pro_bt_left`, `piantor_pro_bt_right` | `Piantor Pro BT` |
 | Piantor Pro BT 5-Col | 5-column | `piantor_pro_bt_5col_left`, `piantor_pro_bt_5col_right` | `Piantor Pro BT` |
 | [Sofle Choc Pro BT](https://keebart.com/products/sofle-wireless) | 6-column | `sofle_choc_pro_left`, `sofle_choc_pro_right` | `Sofle Choc BT` |
@@ -29,6 +31,10 @@ making wireless models identifiable in the host's Bluetooth menu.
 Corne and Piantor have separate 6-column and 5-column firmware targets. The
 6-column targets retain the standard keymaps. Targets ending in `_5col` use a
 compact keymap designed specifically for boards without the outer columns.
+
+The Corne additionally provides `*_de` targets, which use the same hardware and
+keymap as their base variant plus a `DE` layer for German umlauts. See
+[German umlauts](#german-umlauts-de-targets).
 
 Separate firmware is intentional. ZMK Studio can switch between physical
 layouts in one firmware, but it stores one runtime keymap rather than two
@@ -89,6 +95,50 @@ The source files are:
 - `config/piantor_pro_bt_5col.keymap`
 
 Matching board-default copies are kept under `boards/arm/*_5col/`.
+
+## German umlauts (DE targets)
+
+Standard ZMK keycodes follow the USB HID specification, which describes key
+*positions* on a US English layout. Letters like `ö`, `ä`, `ü`, and `ß` are not
+in that specification, so they cannot be typed by a single keycode unless the
+host OS is switched to a German layout.
+
+The `*_de` targets solve this without changing the host layout. They keep the
+US English layout and add a dedicated `DE` layer that types the characters as
+Unicode code points through the
+[urob/zmk-unicode](https://github.com/urob/zmk-unicode) module, which is declared
+in `config/west.yml`.
+
+| Key | Types |
+| --- | --- |
+| `A` | `ä` |
+| `S` | `ß` |
+| `U` | `ü` |
+| `O` | `ö` |
+| `E` | `€` |
+
+Shift works as usual, so `Shift` + `A` gives `Ä`. Every other key on the layer
+is transparent, so the base layer keeps working while the layer is held.
+
+Reach the layer with the right-hand Alt key:
+
+- 6-column: hold the right thumb `Alt` key. A tap still produces `Alt`.
+- 5-column: hold the right inner `Alt` key. A tap still produces `Alt`.
+
+The source files are:
+
+- `config/corne_choc_pro_de.keymap`
+- `config/corne_choc_pro_de_5col.keymap`
+
+The DE targets require a Unicode input method on the host. On Windows install
+[WinCompose](https://github.com/ell1010/wincompose/releases/latest); it runs at
+startup and needs no further configuration. The keymap defaults to the matching
+WinCompose input system. macOS and Linux alternatives are documented in the
+module's README; change `default-mode` in the keymap if you use them.
+
+Because the characters are sent as Unicode sequences, an editor or browser that
+ignores such input will not receive the character, and the ZMK Keymap Editor
+displays these keys as Unicode bindings rather than as visible umlaut glyphs.
 
 ## Miryoku firmware
 
@@ -186,6 +236,11 @@ the correct visual geometry.
 
 Editing and committing a source keymap triggers a new GitHub Actions build.
 This is the recommended workflow for maintaining and distributing defaults.
+
+For the DE targets, pick the matching `config/corne_choc_pro_de.keymap` or
+`config/corne_choc_pro_de_5col.keymap`. The umlaut keys on the `DE` layer are
+shown as Unicode bindings to a parameterised behavior, which the editor renders
+as a generic key rather than as `ä`, `ö`, `ü`, or `ß`.
 
 ### ZMK Studio
 

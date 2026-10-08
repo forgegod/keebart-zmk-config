@@ -34,6 +34,30 @@ include:
     shield: settings_reset
     snippet: studio-rpc-usb-uart
 
+  # --- Corne Choc Pro DE: German umlauts via the zmk-unicode module --------
+  # Identical hardware to the Corne Choc Pro, but the default keymap adds a
+  # dedicated DE layer. The stock settings_reset firmware above also works for
+  # these boards, so no extra reset targets are needed.
+  - board: corne_choc_pro_de_left
+    snippet: studio-rpc-usb-uart
+    shield: sharp_mip
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: corne_choc_pro_de_left
+  - board: corne_choc_pro_de_right
+    shield: sharp_mip
+    snippet: studio-rpc-usb-uart
+    artifact-name: corne_choc_pro_de_right
+
+  - board: corne_choc_pro_de_5col_left
+    snippet: studio-rpc-usb-uart
+    shield: sharp_mip
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: corne_choc_pro_de_5col_left
+  - board: corne_choc_pro_de_5col_right
+    shield: sharp_mip
+    snippet: studio-rpc-usb-uart
+    artifact-name: corne_choc_pro_de_5col_right
+
   - board: piantor_pro_bt_left
     snippet: studio-rpc-usb-uart
     shield: sharp_mip

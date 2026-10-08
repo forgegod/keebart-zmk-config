@@ -1,0 +1,17 @@
+file_format: "1"
+id: corne_choc_pro_de
+name: Corne Choc Pro BT DE
+type: board
+arch: arm
+features:
+  - keys
+  - underglow
+  - studio
+  - encoder
+outputs:
+  - usb
+  - ble
+url: https://keebart.com/products/corne-wireless
+siblings:
+  - corne_choc_pro_de_left
+  - corne_choc_pro_de_right

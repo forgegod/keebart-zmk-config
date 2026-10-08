@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -9,5 +11,10 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
+    # Unicode input behavior, used by the *_de boards to type German umlauts
+    # (ö, ä, ü, ß, €) while the host OS stays on the US layout.
+    - name: zmk-unicode
+      remote: urob
+      revision: v0.3
   self:
     path: config
