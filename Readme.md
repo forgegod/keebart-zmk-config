@@ -130,15 +130,58 @@ The source files are:
 - `config/corne_choc_pro_de.keymap`
 - `config/corne_choc_pro_de_5col.keymap`
 
-The DE targets require a Unicode input method on the host. On Windows install
-[WinCompose](https://github.com/ell1010/wincompose/releases/latest); it runs at
-startup and needs no further configuration. The keymap defaults to the matching
-WinCompose input system. macOS and Linux alternatives are documented in the
-module's README; change `default-mode` in the keymap if you use them.
+### Host setup with WinCompose (Windows)
 
-Because the characters are sent as Unicode sequences, an editor or browser that
-ignores such input will not receive the character, and the ZMK Keymap Editor
-displays these keys as Unicode bindings rather than as visible umlaut glyphs.
+ZMK sends the umlaut as a Unicode code point rather than as a single HID
+keycode, so the host needs a program that turns code points into characters. On
+Windows that program is [WinCompose](https://github.com/ell1010/wincompose).
+
+1. Download `WinCompose-x.y.z-setup.exe` from the
+   [latest release](https://github.com/ell1010/wincompose/releases/latest).
+2. Run the installer and accept the default options. WinCompose starts
+   automatically with Windows and places an icon in the notification area.
+3. Make sure that icon is present while you type. No further configuration is
+   required: the default compose key is `Right Alt`, which is exactly the key
+   the DE layer sends.
+
+With WinCompose running, holding the layer key and pressing `A` sends
+`Right Alt`, `u`, `e`, `4`, `Enter`. WinCompose converts that sequence to `ä`.
+Because the keyboard keeps its US English layout and only emits an input-method
+sequence, the result does not depend on the Windows keyboard layout setting.
+
+WinCompose has to be running for the umlauts to appear. Without it the raw
+sequence (`ue4` and a newline) is typed instead, which is the usual symptom of a
+missing or stopped WinCompose.
+
+macOS and Linux use different input systems. See the
+[zmk-unicode README](https://github.com/urob/zmk-unicode) for their setup, then
+change `default-mode` in the `.keymap` and rebuild.
+
+### Editing the DE keymap in the Keymap Editor
+
+The [ZMK Keymap Editor](https://nickcoutsos.github.io/keymap-editor/) is the
+supported way to change the keymap. It edits the source `.keymap` file and
+commits the result back to the repository, which triggers a new firmware build.
+
+1. Open [nickcoutsos.github.io/keymap-editor](https://nickcoutsos.github.io/keymap-editor/)
+   and authorize it for this repository.
+2. Select the repository and the `main` branch.
+3. Choose the keymap matching your hardware:
+   - `config/corne_choc_pro_de.keymap` for the 6-column Corne
+   - `config/corne_choc_pro_de_5col.keymap` for the 5-column Corne
+4. The editor draws the layout from the matching `config/corne_choc_pro_de.json`
+   or `config/corne_choc_pro_de_5col.json`, so the grid matches the real board.
+5. Select the `DE` layer to reach the umlaut keys.
+
+The umlaut keys appear as Unicode input (`&uc`) bindings, not as `ö`, `ä`, `ü`,
+or `ß` glyphs. The characters are Unicode code points outside the USB HID
+keyboard specification, so no single keycode exists to draw. Each key shows two
+code point parameters: the first is produced on tap, the second while `Shift` is
+held. For `ä` those are `0xE4` and `0xC4`.
+
+To change which character a key produces, select the key, pick the Unicode input
+behavior, and edit the two code point values. The `DE` layer is defined last in
+the keymap, so its key index matches the base layer one for one.
 
 ## Miryoku firmware
 
@@ -185,6 +228,40 @@ west build -s zmk/app -d build/corne-5col-left \
 Change the board target as required. The resulting firmware is written to
 `build/corne-5col-left/zephyr/zmk.uf2`.
 
+### Running the workflow locally
+
+This repository is a fork, so GitHub Actions can be disabled for it by default.
+If the **Actions** tab shows no runs after a push, enable workflows first:
+open the **Actions** tab and confirm the prompt. The `workflow` scope is already
+part of a normal `gh auth login`, so the CLI can trigger and inspect runs:
+
+```sh
+gh workflow run "Build ZMK firmware" --repo forgegod/keebart-zmk-config
+gh run list  --repo forgegod/keebart-zmk-config
+gh run watch --repo forgegod/keebart-zmk-config
+gh run download --repo forgegod/keebart-zmk-config
+```
+
+The whole matrix can also run on this machine through the
+[`nektos/gh-act`](https://github.com/nektos/gh-act) extension, which executes the
+workflow in Docker rather than on GitHub:
+
+```sh
+gh extension install nektos/gh-act   # once
+cd /path/to/this/repo
+gh act -l                            # list jobs without running them
+gh act workflow_dispatch -j build    # run the build job locally
+```
+
+This needs a running Docker daemon. It is not a shortcut: each matrix entry
+performs its own `west init` and `west update`, so the first run downloads the
+toolchain and the full Zephyr tree and takes considerably longer than the hosted
+runner. Use it to validate a keymap change before pushing, or to build without
+depending on the fork's Actions being enabled.
+
+For a local build without `act`, use the `west build` command above, which skips
+the workflow wrapper entirely and needs a separate ARM toolchain setup.
+
 ## Configuration settings
 
 User-adjustable firmware settings belong in the matching `config/*.conf` file.
@@ -205,6 +282,13 @@ and the right half is the peripheral side.
    file.
 4. Reconnect the keyboard and pair it with the host if necessary.
 
+The artifact names identify each half. For the DE targets they are:
+
+| Target | Left half | Right half |
+| --- | --- | --- |
+| Corne Choc Pro DE | `corne_choc_pro_de_left.uf2` | `corne_choc_pro_de_right.uf2` |
+| Corne Choc Pro DE 5-Col | `corne_choc_pro_de_5col_left.uf2` | `corne_choc_pro_de_5col_right.uf2` |
+
 Enter the bootloader by double-pressing the physical reset button, or use the
 bootloader key in the active keymap. On the 5-column keymap, hold `Delete` and
 press `X`.
@@ -216,7 +300,8 @@ Corne, Piantor, and Sofle targets. Use it when split pairing or stored settings
 prevent normal operation:
 
 The standard Corne and Piantor settings-reset files can also be used before
-reflashing their matching 5-column firmware because the hardware is the same.
+reflashing their matching 5-column or DE firmware because the hardware is the
+same. No separate settings-reset targets exist for those variants.
 
 1. Flash the appropriate settings-reset firmware to a half.
 2. Allow it to boot and clear the saved settings.
@@ -240,7 +325,8 @@ This is the recommended workflow for maintaining and distributing defaults.
 For the DE targets, pick the matching `config/corne_choc_pro_de.keymap` or
 `config/corne_choc_pro_de_5col.keymap`. The umlaut keys on the `DE` layer are
 shown as Unicode bindings to a parameterised behavior, which the editor renders
-as a generic key rather than as `ä`, `ö`, `ü`, or `ß`.
+as a generic key rather than as `ä`, `ö`, `ü`, or `ß`. See
+[German umlauts](#german-umlauts-de-targets) for the full walkthrough.
 
 ### ZMK Studio
 
