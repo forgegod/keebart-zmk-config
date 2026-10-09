@@ -1,0 +1,8 @@
+/* SPDX-License-Identifier: MIT */
+
+#include "../sofle_choc_pro/sofle_choc_pro_left.dts"
+
+/ {
+    model = "sofle_choc_pro_de_left";
+    compatible = "sofle_choc_pro_de_left";
+};

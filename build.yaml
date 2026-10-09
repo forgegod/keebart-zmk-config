@@ -58,6 +58,19 @@ include:
     snippet: studio-rpc-usb-uart
     artifact-name: corne_choc_pro_de_5col_right
 
+  # --- DE targets: German umlauts via the zmk-unicode module -----------------
+  # These are hardware aliases with an additional DE keymap layer. The stock
+  # settings_reset firmware for each base keyboard also covers its DE target.
+  - board: piantor_pro_bt_de_left
+    snippet: studio-rpc-usb-uart
+    shield: sharp_mip
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: piantor_pro_bt_de_left
+  - board: piantor_pro_bt_de_right
+    shield: sharp_mip
+    snippet: studio-rpc-usb-uart
+    artifact-name: piantor_pro_bt_de_right
+
   - board: piantor_pro_bt_left
     snippet: studio-rpc-usb-uart
     shield: sharp_mip
@@ -84,6 +97,16 @@ include:
   - board: piantor_pro_bt_right
     shield: settings_reset
     snippet: studio-rpc-usb-uart
+
+  - board: sofle_choc_pro_de_left
+    snippet: studio-rpc-usb-uart
+    shield: sharp_mip
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: sofle_choc_pro_de_left
+  - board: sofle_choc_pro_de_right
+    shield: sharp_mip
+    snippet: studio-rpc-usb-uart
+    artifact-name: sofle_choc_pro_de_right
 
   - board: sofle_choc_pro_left
     snippet: studio-rpc-usb-uart

@@ -20,8 +20,10 @@ Actions firmware builds.
 | Corne Choc Pro BT DE | 6-column | `corne_choc_pro_de_left`, `corne_choc_pro_de_right` | `Corne Choc DE` |
 | Corne Choc Pro BT DE 5-Col | 5-column | `corne_choc_pro_de_5col_left`, `corne_choc_pro_de_5col_right` | `Corne DE 5col` |
 | [Piantor Pro BT](https://keebart.com/products/piantor-wireless) | 6-column | `piantor_pro_bt_left`, `piantor_pro_bt_right` | `Piantor Pro BT` |
+| Piantor Pro BT DE | 6-column | `piantor_pro_bt_de_left`, `piantor_pro_bt_de_right` | `Piantor Pro DE` |
 | Piantor Pro BT 5-Col | 5-column | `piantor_pro_bt_5col_left`, `piantor_pro_bt_5col_right` | `Piantor Pro BT` |
 | [Sofle Choc Pro BT](https://keebart.com/products/sofle-wireless) | 6-column | `sofle_choc_pro_left`, `sofle_choc_pro_right` | `Sofle Choc BT` |
+| Sofle Choc Pro BT DE | 6-column | `sofle_choc_pro_de_left`, `sofle_choc_pro_de_right` | `Sofle Choc DE` |
 
 The shortened Bluetooth names fit ZMK's 16-character device-name limit while
 making wireless models identifiable in the host's Bluetooth menu.
@@ -32,9 +34,10 @@ Corne and Piantor have separate 6-column and 5-column firmware targets. The
 6-column targets retain the standard keymaps. Targets ending in `_5col` use a
 compact keymap designed specifically for boards without the outer columns.
 
-The Corne additionally provides `*_de` targets, which use the same hardware and
-keymap as their base variant plus a `DE` layer for German umlauts. See
-[German umlauts](#german-umlauts-de-targets).
+Corne, Piantor, and Sofle additionally provide `*_de` targets, which use the
+same hardware and keymap as their base variant plus a `DE` layer for German
+umlauts. See [German umlauts](#german-umlauts-de-targets). Piantor's compact
+5-column target does not have a spare right-Alt thumb key for the DE-layer hold.
 
 Separate firmware is intentional. ZMK Studio can switch between physical
 layouts in one firmware, but it stores one runtime keymap rather than two
@@ -129,6 +132,8 @@ The source files are:
 
 - `config/corne_choc_pro_de.keymap`
 - `config/corne_choc_pro_de_5col.keymap`
+- `config/piantor_pro_bt_de.keymap`
+- `config/sofle_choc_pro_de.keymap`
 
 ### Host setup with WinCompose (Windows)
 
@@ -169,8 +174,10 @@ commits the result back to the repository, which triggers a new firmware build.
 3. Choose the keymap matching your hardware:
    - `config/corne_choc_pro_de.keymap` for the 6-column Corne
    - `config/corne_choc_pro_de_5col.keymap` for the 5-column Corne
-4. The editor draws the layout from the matching `config/corne_choc_pro_de.json`
-   or `config/corne_choc_pro_de_5col.json`, so the grid matches the real board.
+   - `config/piantor_pro_bt_de.keymap` for the 6-column Piantor
+   - `config/sofle_choc_pro_de.keymap` for the Sofle
+4. The editor draws the layout from the matching `.json` file, so the grid
+   matches the real board.
 5. Select the `DE` layer to reach the umlaut keys.
 
 The umlaut keys appear as Unicode input (`&uc`) bindings, not as `ö`, `ä`, `ü`,
@@ -288,6 +295,8 @@ The artifact names identify each half. For the DE targets they are:
 | --- | --- | --- |
 | Corne Choc Pro DE | `corne_choc_pro_de_left.uf2` | `corne_choc_pro_de_right.uf2` |
 | Corne Choc Pro DE 5-Col | `corne_choc_pro_de_5col_left.uf2` | `corne_choc_pro_de_5col_right.uf2` |
+| Piantor Pro BT DE | `piantor_pro_bt_de_left.uf2` | `piantor_pro_bt_de_right.uf2` |
+| Sofle Choc Pro BT DE | `sofle_choc_pro_de_left.uf2` | `sofle_choc_pro_de_right.uf2` |
 
 Enter the bootloader by double-pressing the physical reset button, or use the
 bootloader key in the active keymap. On the 5-column keymap, hold `Delete` and
@@ -300,8 +309,9 @@ Corne, Piantor, and Sofle targets. Use it when split pairing or stored settings
 prevent normal operation:
 
 The standard Corne and Piantor settings-reset files can also be used before
-reflashing their matching 5-column or DE firmware because the hardware is the
-same. No separate settings-reset targets exist for those variants.
+reflashing their matching 5-column or DE firmware. The standard Sofle
+settings-reset files also cover its DE firmware. The hardware is identical, so
+no separate settings-reset targets exist for those variants.
 
 1. Flash the appropriate settings-reset firmware to a half.
 2. Allow it to boot and clear the saved settings.
@@ -322,11 +332,10 @@ the correct visual geometry.
 Editing and committing a source keymap triggers a new GitHub Actions build.
 This is the recommended workflow for maintaining and distributing defaults.
 
-For the DE targets, pick the matching `config/corne_choc_pro_de.keymap` or
-`config/corne_choc_pro_de_5col.keymap`. The umlaut keys on the `DE` layer are
-shown as Unicode bindings to a parameterised behavior, which the editor renders
-as a generic key rather than as `ä`, `ö`, `ü`, or `ß`. See
-[German umlauts](#german-umlauts-de-targets) for the full walkthrough.
+For the DE targets, pick the matching `config/*_de.keymap` file. The umlaut
+keys on the `DE` layer are shown as Unicode bindings to a parameterised behavior,
+which the editor renders as a generic key rather than as `ä`, `ö`, `ü`, or `ß`.
+See [German umlauts](#german-umlauts-de-targets) for the full walkthrough.
 
 ### ZMK Studio
 
