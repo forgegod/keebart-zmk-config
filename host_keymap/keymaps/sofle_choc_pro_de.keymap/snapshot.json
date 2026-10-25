@@ -1,0 +1,763 @@
+{
+  "version": 1,
+  "view": {
+    "columns": [
+      {
+        "language": "en",
+        "layoutId": "user:2bc93dca-0005-4dad-9ab5-a62a46542507",
+        "visible": true,
+        "altGr": true,
+        "altGrShift": true
+      }
+    ],
+    "open": null
+  },
+  "layouts": [
+    {
+      "id": "user:2bc93dca-0005-4dad-9ab5-a62a46542507",
+      "name": "System 2",
+      "language": "en",
+      "origin": {
+        "from": "copy",
+        "layoutId": "system-us"
+      },
+      "keys": [
+        {
+          "zmk": "A",
+          "keysyms": [
+            "a",
+            "A",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "a",
+            "A",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "B",
+          "keysyms": [
+            "b",
+            "B",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "b",
+            "B",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "BSLH",
+          "keysyms": [
+            "backslash",
+            "bar",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "\\",
+            "|",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "C",
+          "keysyms": [
+            "c",
+            "C",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "c",
+            "C",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "COMMA",
+          "keysyms": [
+            "comma",
+            "less",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            ",",
+            "<",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "D",
+          "keysyms": [
+            "d",
+            "D",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "d",
+            "D",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "DOT",
+          "keysyms": [
+            "period",
+            "greater",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            ".",
+            ">",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "E",
+          "keysyms": [
+            "e",
+            "E",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "e",
+            "E",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "ENTER",
+          "keysyms": [
+            "Return",
+            "Return",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "EQUAL",
+          "keysyms": [
+            "equal",
+            "plus",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "=",
+            "+",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "F",
+          "keysyms": [
+            "f",
+            "F",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "f",
+            "F",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "G",
+          "keysyms": [
+            "g",
+            "G",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "g",
+            "G",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "GRAVE",
+          "keysyms": [
+            "grave",
+            "asciitilde",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "`",
+            "~",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "H",
+          "keysyms": [
+            "h",
+            "H",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "h",
+            "H",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "I",
+          "keysyms": [
+            "i",
+            "I",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "i",
+            "I",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "J",
+          "keysyms": [
+            "j",
+            "J",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "j",
+            "J",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "K",
+          "keysyms": [
+            "k",
+            "K",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "k",
+            "K",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "L",
+          "keysyms": [
+            "l",
+            "L",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "l",
+            "L",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "LBKT",
+          "keysyms": [
+            "bracketleft",
+            "braceleft",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "[",
+            "{",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "M",
+          "keysyms": [
+            "m",
+            "M",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "m",
+            "M",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "MINUS",
+          "keysyms": [
+            "minus",
+            "underscore",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "-",
+            "_",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N",
+          "keysyms": [
+            "n",
+            "N",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "n",
+            "N",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N0",
+          "keysyms": [
+            "0",
+            "parenright",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "0",
+            ")",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N1",
+          "keysyms": [
+            "1",
+            "exclam",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "1",
+            "!",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N2",
+          "keysyms": [
+            "2",
+            "at",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "2",
+            "@",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N3",
+          "keysyms": [
+            "3",
+            "numbersign",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "3",
+            "#",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N4",
+          "keysyms": [
+            "4",
+            "dollar",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "4",
+            "$",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N5",
+          "keysyms": [
+            "5",
+            "percent",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "5",
+            "%",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N6",
+          "keysyms": [
+            "6",
+            "asciicircum",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "6",
+            "^",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N7",
+          "keysyms": [
+            "7",
+            "ampersand",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "7",
+            "&",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N8",
+          "keysyms": [
+            "8",
+            "asterisk",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "8",
+            "*",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "N9",
+          "keysyms": [
+            "9",
+            "parenleft",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "9",
+            "(",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "O",
+          "keysyms": [
+            "o",
+            "O",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "o",
+            "O",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "P",
+          "keysyms": [
+            "p",
+            "P",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "p",
+            "P",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "Q",
+          "keysyms": [
+            "q",
+            "Q",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "q",
+            "Q",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "R",
+          "keysyms": [
+            "r",
+            "R",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "r",
+            "R",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "RBKT",
+          "keysyms": [
+            "bracketright",
+            "braceright",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "]",
+            "}",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "S",
+          "keysyms": [
+            "s",
+            "S",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "s",
+            "S",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "SEMI",
+          "keysyms": [
+            "semicolon",
+            "colon",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            ";",
+            ":",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "SLASH",
+          "keysyms": [
+            "slash",
+            "question",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "/",
+            "?",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "SPACE",
+          "keysyms": [
+            "space",
+            "space",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            " ",
+            " ",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "SQT",
+          "keysyms": [
+            "apostrophe",
+            "quotedbl",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "'",
+            "\"",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "T",
+          "keysyms": [
+            "t",
+            "T",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "t",
+            "T",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "U",
+          "keysyms": [
+            "u",
+            "U",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "u",
+            "U",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "V",
+          "keysyms": [
+            "v",
+            "V",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "v",
+            "V",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "W",
+          "keysyms": [
+            "w",
+            "W",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "w",
+            "W",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "X",
+          "keysyms": [
+            "x",
+            "X",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "x",
+            "X",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "Y",
+          "keysyms": [
+            "y",
+            "Y",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "y",
+            "Y",
+            "",
+            ""
+          ]
+        },
+        {
+          "zmk": "Z",
+          "keysyms": [
+            "z",
+            "Z",
+            "NoSymbol",
+            "NoSymbol"
+          ],
+          "glyphs": [
+            "z",
+            "Z",
+            "",
+            ""
+          ]
+        }
+      ]
+    }
+  ]
+}
