@@ -1,0 +1,9 @@
+{
+  "name": "keebart-zmk-config",
+  "private": true,
+  "description": "Record-check scripts for the Keebart ZMK config. Firmware builds stay in GitHub Actions.",
+  "scripts": {
+    "records:check": "node ./scripts/check-product-records.mjs",
+    "test:records": "node --test tests/records-evidence.test.mjs"
+  }
+}

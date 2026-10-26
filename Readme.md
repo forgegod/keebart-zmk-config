@@ -382,3 +382,17 @@ Corne Choc Pro supports four encoder definitions:
 Sofle Choc Pro uses one encoder for volume and the other for previous/next
 media track. The encoder actions are available on its default, Lower, and
 Raise layers.
+
+## Maintenance
+
+CAP/CHG records track config changes. Current unicode pin: [CAP-001](docs/product/capabilities/CAP-001-unicode-module-pin.md). The planned move to the forgegod unicode fork is [CHG-001](docs/changes/active/CHG-001-pin-the-unicode-fork.md). `config/west.yml` still pins `urob` `v0.3` until that change is verified.
+
+Record check, which does not build firmware:
+
+```bash
+node scripts/check-product-records.mjs
+node --test tests/records-evidence.test.mjs
+```
+
+Firmware builds remain [`.github/workflows/build.yml`](.github/workflows/build.yml).
+
