@@ -1,6 +1,6 @@
 # CHG-001 — Pin the unicode fork
 
-**Status:** in-progress
+**Status:** planned
 **External request:** Direct operator request: if this config should incorporate the unicode fork, adopt the AI Software Blueprint here and manage that pin as a change request.
 **Impacts:** CAP-001
 **Baseline:** `70b28974fa6ecdad6e35bee39e5f285caa8d11f2`
@@ -9,13 +9,15 @@ Depends on `forgegod/urob-zmk-unicode` CHG-001. The browser client remains `forg
 
 | # | Phase | Status | Verification gate |
 | --- | --- | --- | --- |
-| 1 | Specify the fork pin | in-progress | `node scripts/check-product-records.mjs` exits 0 |
+| 1 | Specify the fork pin | done (`node scripts/check-product-records.mjs` exit 0 @ 4d95a77e4e62ddd8ef6c119efefbb09cad1837c9) | `node scripts/check-product-records.mjs` exits 0 |
 | 2 | Retarget zmk-unicode to the metadata revision | pending | `.github/workflows/build.yml` succeeds after the pin change |
 | 3 | Integrate the current pin record | pending | `node scripts/check-product-records.mjs && node --test tests/records-evidence.test.mjs` exits 0 |
 
 ## Phase 1 — Specify the fork pin
 
 **Goal:** the next pin is identified without changing `config/west.yml`.
+
+**Resolved metadata revision:** `08af43a5aa4838319046c1f2aa0d6efdf6c975d1` (`feat(unicode): advertise parameter metadata` in `forgegod/urob-zmk-unicode`). Phase 2 is responsible for fetching and pinning this revision.
 
 1. Keep the west project name `zmk-unicode`.
 2. Add a `forgegod` remote with `url-base: https://github.com/forgegod` when the pin is made. Point `zmk-unicode` at that remote.
