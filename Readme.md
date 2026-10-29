@@ -385,7 +385,7 @@ Raise layers.
 
 ## Maintenance
 
-CAP/CHG records track config changes. Current unicode pin: [CAP-001](docs/product/capabilities/CAP-001-unicode-module-pin.md). Change progress: [CHG-001](docs/changes/active/CHG-001-pin-the-unicode-fork.md). `config/west.yml` pins project `zmk-unicode` from remote `forgegod`, repo-path `urob-zmk-unicode`, at revision `08af43a5aa4838319046c1f2aa0d6efdf6c975d1`. ZMK remains at `zmkfirmware` `v0.3`.
+CAP/CHG records track config changes. Current unicode pin: [CAP-001](docs/product/capabilities/CAP-001-unicode-module-pin.md). Change record: [CHG-001](docs/changes/archive/CHG-001-pin-the-unicode-fork.md). `config/west.yml` pins project `zmk-unicode` from remote `forgegod`, repo-path `urob-zmk-unicode`, at revision `08af43a5aa4838319046c1f2aa0d6efdf6c975d1`. ZMK remains at `zmkfirmware` `v0.3`.
 
 Record check, which does not build firmware:
 

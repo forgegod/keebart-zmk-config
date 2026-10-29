@@ -38,14 +38,14 @@ Every CHG names its identity, the external request, affected CAP IDs, the baseli
 
 ## Current records
 
-| Change | Status |
-| --- | --- |
-| [CHG-001 — Pin the unicode fork](active/CHG-001-pin-the-unicode-fork.md) | planned |
+No active change records.
 
 ## Archive
 
-No archived change records.
+| Change | Status |
+| --- | --- |
+| [CHG-001 — Pin the unicode fork](archive/CHG-001-pin-the-unicode-fork.md) | done |
 
 ## Verification
 
-Run `node scripts/check-product-records.mjs` after editing a record. A pin phase still requires `.github/workflows/build.yml` to succeed. This initialization did not run that workflow.
+Run `node scripts/check-product-records.mjs` after editing a record. A pin phase still requires `.github/workflows/build.yml` to succeed.
