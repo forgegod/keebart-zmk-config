@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: forgegod
+      url-base: https://github.com/forgegod
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -14,7 +16,8 @@ manifest:
     # Unicode input behavior, used by the *_de boards to type German umlauts
     # (ö, ä, ü, ß, €) while the host OS stays on the US layout.
     - name: zmk-unicode
-      remote: urob
-      revision: v0.3
+      remote: forgegod
+      repo-path: urob-zmk-unicode
+      revision: 08af43a5aa4838319046c1f2aa0d6efdf6c975d1
   self:
     path: config
