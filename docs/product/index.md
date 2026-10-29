@@ -1,6 +1,6 @@
 # Current capability index
 
-These records describe the checked-out config. The planned unicode-fork pin is not current.
+These records describe the checked-out config. CAP-001 names the current unicode-fork pin.
 
 | Capability | Status | Primary surface |
 | --- | --- | --- |

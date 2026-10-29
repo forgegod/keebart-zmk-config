@@ -109,7 +109,7 @@ host OS is switched to a German layout.
 The `*_de` targets solve this without changing the host layout. They keep the
 US English layout and add a dedicated `DE` layer that types the characters as
 Unicode code points through the
-[urob/zmk-unicode](https://github.com/urob/zmk-unicode) module, which is declared
+[forgegod/urob-zmk-unicode](https://github.com/forgegod/urob-zmk-unicode) fork, which is declared
 in `config/west.yml`.
 
 | Key | Types |
@@ -385,7 +385,7 @@ Raise layers.
 
 ## Maintenance
 
-CAP/CHG records track config changes. Current unicode pin: [CAP-001](docs/product/capabilities/CAP-001-unicode-module-pin.md). The planned move to the forgegod unicode fork is [CHG-001](docs/changes/active/CHG-001-pin-the-unicode-fork.md). `config/west.yml` still pins `urob` `v0.3` until that change is verified.
+CAP/CHG records track config changes. Current unicode pin: [CAP-001](docs/product/capabilities/CAP-001-unicode-module-pin.md). Change progress: [CHG-001](docs/changes/active/CHG-001-pin-the-unicode-fork.md). `config/west.yml` pins project `zmk-unicode` from remote `forgegod`, repo-path `urob-zmk-unicode`, at revision `08af43a5aa4838319046c1f2aa0d6efdf6c975d1`. ZMK remains at `zmkfirmware` `v0.3`.
 
 Record check, which does not build firmware:
 

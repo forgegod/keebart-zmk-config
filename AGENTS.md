@@ -79,7 +79,7 @@ Default section order:
 
 This repository is the Keebart ZMK user config. It owns board definitions, keymaps, the west manifest, and the GitHub firmware build. It does not own the unicode driver or the browser keymap editor.
 
-- `config/west.yml` pins ZMK `v0.3` and `zmk-unicode` `v0.3` from `urob`. That pin is current. Do not retarget it until the unicode fork revision advertises Studio parameter metadata.
+- `config/west.yml` pins ZMK from `zmkfirmware` at `v0.3` and project `zmk-unicode` from remote `forgegod`, repo-path `urob-zmk-unicode`, at `08af43a5aa4838319046c1f2aa0d6efdf6c975d1`, the Studio parameter-metadata revision.
 - A pin change does not edit keymap bindings, `default-mode`, or Kconfig. Those stay in the keymap and conf files.
 - Studio support is the left-half `studio-rpc-usb-uart` snippet and `-DCONFIG_ZMK_STUDIO=y` in `build.yaml`. Do not add a second USB protocol here.
 - Local `firmware/` and `current/` UF2 drops are not source. Do not stage them with record or pin changes.
