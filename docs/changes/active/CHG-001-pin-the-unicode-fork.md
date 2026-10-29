@@ -1,6 +1,6 @@
 # CHG-001 — Pin the unicode fork
 
-**Status:** planned
+**Status:** in-progress
 **External request:** Direct operator request: if this config should incorporate the unicode fork, adopt the AI Software Blueprint here and manage that pin as a change request.
 **Impacts:** CAP-001
 **Baseline:** `70b28974fa6ecdad6e35bee39e5f285caa8d11f2`
@@ -11,7 +11,7 @@ Depends on `forgegod/urob-zmk-unicode` CHG-001. The browser client remains `forg
 | --- | --- | --- | --- |
 | 1 | Specify the fork pin | done (`node scripts/check-product-records.mjs` exit 0 @ 4d95a77e4e62ddd8ef6c119efefbb09cad1837c9) | `node scripts/check-product-records.mjs` exits 0 |
 | 2 | Retarget zmk-unicode to the metadata revision | done (`.github/workflows/build.yml` exit 0 @ a8894d35bcc2f27aba4dffd5bdce46416f4c8173) | `.github/workflows/build.yml` succeeds after the pin change |
-| 3 | Integrate the current pin record | pending | `node scripts/check-product-records.mjs && node --test tests/records-evidence.test.mjs` exits 0 |
+| 3 | Integrate the current pin record | in-progress | `node scripts/check-product-records.mjs && node --test tests/records-evidence.test.mjs` exits 0 |
 
 ## Phase 1 — Specify the fork pin
 
